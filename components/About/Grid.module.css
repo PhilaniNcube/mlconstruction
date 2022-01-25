@@ -1,0 +1,28 @@
+.grid {
+  @apply relative max-w-sm overflow-hidden rounded bg-gray-600;
+}
+
+.grid:hover > img,
+.grid:hover > div > p {
+  display: none;
+  @apply transition;
+}
+
+.grid > div > ul {
+  display: none;
+  @apply list-disc text-sm text-white transition;
+}
+
+.grid > div > h2 {
+  display: none;
+  @apply text-lg uppercase text-white transition;
+}
+
+.grid:hover > div > ul,
+.grid:hover > div > h2 {
+  display: block;
+}
+
+.gridimage {
+  @apply aspect-square h-full w-full object-cover mix-blend-multiply;
+}
