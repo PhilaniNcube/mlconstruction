@@ -1,15 +1,26 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Hero = () => {
   return (
     <header className="relative -z-20 mb-12 flex min-h-screen items-center justify-center overflow-hidden">
       <div className="relative z-30 flex flex-col items-center justify-center rounded-xl p-5 text-2xl text-white">
-        <h1 className="text-2xl font-light uppercase md:text-4xl xl:text-5xl">
+        <motion.h1
+          initial={{ x: `100%`, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="text-2xl font-light uppercase md:text-4xl xl:text-5xl"
+        >
           We Offer Creative Method
-        </h1>
-        <h1 className="text-2xl font-medium uppercase md:text-4xl xl:text-5xl">
+        </motion.h1>
+        <motion.h1
+          className="text-2xl font-medium uppercase md:text-4xl xl:text-5xl"
+          initial={{ x: `-100%`, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
           To Meet Your Needs
-        </h1>
+        </motion.h1>
 
         <button className="mt-4 rounded-lg border-2 border-orange-600 px-6 py-1 text-sm">
           Learn more

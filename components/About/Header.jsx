@@ -1,7 +1,37 @@
-import React, { Fragment } from 'react'
+import { motion, useAnimation } from 'framer-motion'
+import React, { Fragment, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
 import s from '../About/Grid.module.css'
 
 const Header = () => {
+  const { ref, inView } = useInView()
+
+  const animation = useAnimation()
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: 'spring',
+          duration: 1.5,
+        },
+      })
+    }
+
+    if (!inView) {
+      animation.start({
+        y: '-100vh',
+        opacity: 0,
+        transition: {
+          type: 'spring',
+          duration: 1.5,
+        },
+      })
+    }
+  }, [inView])
+
   return (
     <Fragment>
       <header className="-mt-12 h-[55vh] bg-orange-600" id="services">
@@ -17,9 +47,9 @@ const Header = () => {
           <p className="mt-4 max-w-2xl text-sm">See some examples below:</p>
         </div>
       </header>
-      <section className="bg-white py-16">
+      <section ref={ref} className="bg-white py-16">
         <div className="mx-auto max-w-6xl">
-          <div className="grid grid-cols-3 gap-6">
+          <motion.div className="grid grid-cols-3 gap-6" animate={animation}>
             <div className={s.grid}>
               <img className={s.gridimage} src="/images/excavator.jpg" alt="" />
               <div className="absolute bottom-0 left-0 right-0 flex h-full items-center justify-center px-6 pb-7">
@@ -69,7 +99,7 @@ const Header = () => {
                 <h2 className="font-medium">View Our Portfolio</h2>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           <div className="flex justify-between py-10">
             <p className="text-md w-3/4 text-gray-800">
