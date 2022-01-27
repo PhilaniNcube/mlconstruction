@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 const FAQ = () => {
   return (
     <Fragment>
-      <section className="bg-sky-900">
+      <section className="bg-sky-900" id="faqs">
         <div className="mx-auto max-w-6xl py-16 text-white">
           <h2 className="text-3xl font-light uppercase  md:text-5xl">
             Affiliate <span className="font-bold">Associations</span>
