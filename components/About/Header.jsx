@@ -4,7 +4,7 @@ import s from '../About/Grid.module.css'
 const Header = () => {
   return (
     <Fragment>
-      <header className="h-[55vh] bg-orange-600">
+      <header className="-mt-12 h-[55vh] bg-orange-600" id="services">
         <div className="mx-auto flex h-full max-w-6xl flex-col justify-center space-y-6 text-white">
           <h1 className="text-2xl font-light uppercase md:text-4xl xl:text-5xl">
             Why Choose <span className="font-bold">Us?</span>
@@ -23,7 +23,7 @@ const Header = () => {
             <div className={s.grid}>
               <img className={s.gridimage} src="/images/excavator.jpg" alt="" />
               <div className="absolute bottom-0 left-0 right-0 flex h-full items-center justify-center px-6 pb-7">
-                <p className="text-lg font-light uppercase leading-6 text-white">
+                <p className="text-xl font-medium uppercase leading-6 text-white">
                   Civil Construction
                 </p>
                 <ul>
@@ -46,7 +46,7 @@ const Header = () => {
                 alt=""
               />
               <div className="absolute bottom-0 left-0 right-0 flex h-full items-center justify-center px-6 pb-7">
-                <p className="text-lg font-light uppercase leading-6 text-white">
+                <p className="text-xl font-medium uppercase leading-6 text-white">
                   Building Construction
                 </p>
                 <ul>
@@ -63,7 +63,7 @@ const Header = () => {
             <div className={s.grid}>
               <img className={s.gridimage} src="/images/building.jpg" alt="" />
               <div className="absolute bottom-0 left-0 right-0 flex h-full items-center justify-center px-6 pb-7">
-                <p className="text-lg font-light uppercase leading-6 text-white">
+                <p className="text-xl font-medium uppercase leading-6 text-white">
                   Portfolio
                 </p>
                 <h2 className="font-medium">View Our Portfolio</h2>

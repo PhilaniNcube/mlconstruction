@@ -23,7 +23,10 @@ const Hero = () => {
             ensure the growth of our company. In our employ, we have qualified
             individuals in various fields of engineering.
           </p>
-          <div className="mt-8 grid w-full grid-cols-1 lg:grid-cols-2">
+          <div
+            id="about"
+            className="mt-8 grid w-full grid-cols-1 lg:grid-cols-2"
+          >
             <div className="flex justify-between">
               <div className="flex h-full w-full translate-y-6 flex-col">
                 <p className="text-sm">
