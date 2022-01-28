@@ -102,17 +102,52 @@ const Header = () => {
           </motion.div>
 
           <div className="flex justify-between py-10">
-            <p className="text-md w-3/4 text-gray-800">
-              Ahacio issupio, nover us M. Equodientis rem vid cae es fortem
-              stantenius; noctantuus crunius, unum teris consimmovere quem prae
-              ta ma, diis cerfenimis, nost peritertisum dem addum ceria senihil
-              nerfit. Aximpro ximores? Batilica voc, vatum se, nondemus, quos
-              hachum sediem hae is auc
-            </p>
-            <button className="flex flex-col bg-orange-600 px-8 py-1 text-center text-lg font-bold uppercase text-white md:flex-row md:items-center md:space-x-2">
-              <p>Get In Touch</p>
-              <img src="/images/whatsapp.svg" />
-            </button>
+            <div className="grid flex-1 grid-cols-3 gap-4">
+              <h2 className="self-center text-3xl font-bold text-orange-600">
+                Our Clients
+              </h2>
+              <img
+                src="/images/buffalo.jpg"
+                alt="buffalo City"
+                className="h-full w-1/3 object-contain"
+              />
+              <img
+                src="/images/comp.jpg"
+                alt="Compensation Fund"
+                className="h-full w-1/3 object-contain"
+              />
+              <img
+                src="/images/nyda.jpg"
+                alt="NYDA"
+                className="h-full w-1/3 object-contain"
+              />
+              <img
+                src="/images/amathole.jpg"
+                alt="Amathole"
+                className="h-full w-1/3 object-contain"
+              />
+              <img
+                src="/images/ec.jpg"
+                alt="Eastern Cape"
+                className="h-full w-1/3 object-contain"
+              />
+              <img
+                src="/images/down.jpg"
+                alt="Down Touch Investments"
+                className="h-full w-1/3 object-contain"
+              />
+              <img
+                src="/images/kei.jpg"
+                alt="Great Kei"
+                className="h-full w-1/3 object-contain"
+              />
+            </div>
+            <div>
+              <button className="flex flex-col bg-orange-600 px-8 py-2 text-center text-lg font-bold uppercase text-white md:flex-row md:items-center md:space-x-2">
+                <p>Get In Touch</p>
+                <img src="/images/whatsapp.svg" />
+              </button>
+            </div>
           </div>
         </div>
       </section>

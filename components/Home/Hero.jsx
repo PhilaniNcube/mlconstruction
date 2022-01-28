@@ -27,12 +27,12 @@ const Hero = () => {
         </button>
         <div className="mx-auto mt-4 max-w-6xl text-center text-white">
           <p className="text-sm">
-            Mas-Lu trading CC is an emerging construction company owned by
-            Masithembe Tukani and Lusanda Msele. We are registered in CIDB Grade
-            3CEPE and 1GB/PE and also registered with NHBRC. As a company, we
-            strive to always provide efficient and the best quality service to
-            ensure the growth of our company. In our employ, we have qualified
-            individuals in various fields of engineering.
+            Mas-Lu trading CC is an emerging construction company. We are
+            registered in CIDB Grade 3CEPE and 1GB/PE and also registered with
+            NHBRC. As a company, we strive to always provide efficient and the
+            best quality service to ensure the growth of our company. In our
+            employ, we have qualified individuals in various fields of
+            engineering.
           </p>
           <div
             id="about"
