@@ -5,8 +5,8 @@ sgMail.setApiKey(process.env.EMAIL_API_KEY)
 const sendEmail = async (req, res) => {
   const { message } = req.body
   const msg = {
-    to: 'info@robia.co.za',
-    from: 'info@robia.co.za',
+    to: 'info@maslu.co.za',
+    from: 'info@maslu.co.za',
     subject: 'Contact Form',
     text: `Hello you have received a contact form submission
     Message: ${message}`,
