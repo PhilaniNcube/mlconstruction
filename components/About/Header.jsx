@@ -1,6 +1,7 @@
 import { motion, useAnimation } from 'framer-motion'
 import React, { Fragment, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
+import Link from 'next/link'
 import s from '../About/Grid.module.css'
 
 const Header = () => {
@@ -34,7 +35,7 @@ const Header = () => {
 
   return (
     <Fragment>
-      <header className="-mt-12 h-[55vh] bg-orange-600" id="services">
+      <header className="-mt-12 h-[55vh] bg-orange-600" id="about">
         <div className="mx-auto flex h-full max-w-6xl flex-col justify-center space-y-6 text-white">
           <h1 className="text-2xl font-light uppercase md:text-4xl xl:text-5xl">
             Why Choose <span className="font-bold">Us?</span>
@@ -44,10 +45,50 @@ const Header = () => {
             employment opportunities. We aim to conclude any job within or
             before the allocated time frame.
           </p>
-          <p className="mt-4 max-w-2xl text-sm">See some examples below:</p>
+
+          <div className="mt-8 grid w-full grid-cols-1 lg:grid-cols-2">
+            <div className="flex justify-between">
+              <div className="flex h-full w-full translate-y-6 flex-col">
+                <p className="text-sm">
+                  <span className="font-medium uppercase">Our Mission</span> is
+                  to diversify service delivery in the Eastern Cape by offering
+                  unique and creative methods to meet the need of our clients.
+                </p>
+              </div>
+              <div className="flex h-full w-full translate-y-6 flex-col">
+                <p className="text-sm">
+                  <span className="font-medium uppercase">Our Values</span> are
+                  rooted in our committment to encourage the Eastern Cape youth
+                  to plough back to their communities and to strive to be
+                  entrepreneurs. We are driven by principles of uBuntu and
+                  integrity.
+                </p>
+              </div>
+            </div>
+            <div className="ml-3 border-l-2 border-white px-4 text-left">
+              <h2 className="text-left text-2xl font-light uppercase md:text-3xl xl:text-4xl">
+                GOALS
+              </h2>
+              <ul className="mt-4 list-disc pl-6 text-sm text-white">
+                <li>
+                  To provide quality and professional services to the province
+                  of the Eastern Cape
+                </li>
+                <li>
+                  To develop and improve the standard of service delivery in the
+                  province of the Eastern Cape
+                </li>
+                <li>
+                  To empower local communities by creating employment
+                  opportunities and developing the youth by offering
+                  internships.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </header>
-      <section ref={ref} className="bg-white py-16">
+      <section ref={ref} className="bg-white py-16" id="services">
         <div className="mx-auto max-w-6xl">
           <motion.div className="grid grid-cols-3 gap-6" animate={animation}>
             <div className={s.grid}>
@@ -111,11 +152,7 @@ const Header = () => {
                 alt="buffalo City"
                 className="h-full w-1/3 object-contain"
               />
-              <img
-                src="/images/comp.jpg"
-                alt="Compensation Fund"
-                className="h-full w-1/3 object-contain"
-              />
+
               <img
                 src="/images/nyda.jpg"
                 alt="NYDA"
@@ -143,10 +180,12 @@ const Header = () => {
               />
             </div>
             <div>
-              <button className="flex flex-col bg-orange-600 px-8 py-2 text-center text-lg font-bold uppercase text-white md:flex-row md:items-center md:space-x-2">
-                <p>Get In Touch</p>
-                <img src="/images/whatsapp.svg" />
-              </button>
+              <Link href="/contact">
+                <button className="flex flex-col bg-orange-600 px-8 py-2 text-center text-lg font-bold uppercase text-white md:flex-row md:items-center md:space-x-2">
+                  <p>Get In Touch</p>
+                  <img src="/images/whatsapp.svg" />
+                </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -14,15 +14,25 @@ const FAQ = () => {
         </div>
       </section>
       <section className="bg-white py-16">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-2 space-y-3 md:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-2 space-y-3 md:grid-cols-3 lg:grid-cols-5">
           <img
-            src="/images/wbho.jpg"
+            src="/images/wbho.png"
             alt="wbho"
             className="h-36 w-full object-contain"
           />
           <img
-            src="/images/cidb.jpg"
+            src="/images/cidb.png"
             alt="cidb"
+            className="h-36 w-full object-contain"
+          />
+          <img
+            src="/images/bccei.png"
+            alt="bccei"
+            className="h-36 w-full object-contain"
+          />
+          <img
+            src="/images/comp.jpg"
+            alt="compensation fund"
             className="h-36 w-full object-contain"
           />
           <img
