@@ -22,9 +22,6 @@ const Hero = () => {
           To Meet Your Needs
         </motion.h1>
 
-        <button className="mt-4 rounded-lg border-2 border-orange-600 px-6 py-1 text-sm">
-          Learn more
-        </button>
         <div className="mx-auto mt-4 max-w-6xl text-center text-white">
           <p className="text-sm">
             Mas-Lu trading CC is an emerging construction company. We are

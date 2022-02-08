@@ -14,12 +14,7 @@ const FAQ = () => {
         </div>
       </section>
       <section className="bg-white py-16">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-2 space-y-3 md:grid-cols-3 lg:grid-cols-5">
-          <img
-            src="/images/wbho.png"
-            alt="wbho"
-            className="h-36 w-full object-contain"
-          />
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-2 space-y-3 md:grid-cols-3 lg:grid-cols-4">
           <img
             src="/images/cidb.png"
             alt="cidb"

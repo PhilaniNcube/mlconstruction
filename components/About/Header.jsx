@@ -1,5 +1,13 @@
 import { motion, useAnimation } from 'framer-motion'
 import React, { Fragment, useEffect } from 'react'
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext,
+} from 'pure-react-carousel'
+import 'pure-react-carousel/dist/react-carousel.es.css'
 import { useInView } from 'react-intersection-observer'
 import Link from 'next/link'
 import s from '../About/Grid.module.css'
@@ -142,42 +150,49 @@ const Header = () => {
             </div>
           </motion.div>
 
-          <div className="flex justify-between py-10">
-            <div className="grid flex-1 grid-cols-3 gap-4">
-              <h2 className="self-center text-3xl font-bold text-orange-600">
+          <div className="flex flex-col py-10">
+            <div className="w-full py-8">
+              <h2 className="py-4 text-center text-3xl font-bold text-orange-600">
                 Our Clients
               </h2>
-              <img
-                src="/images/buffalo.jpg"
-                alt="buffalo City"
-                className="h-full w-1/3 object-contain"
-              />
+              <div className="flex flex-wrap justify-between space-x-6 space-y-4">
+                <img
+                  src="/images/buffalo.jpg"
+                  alt="buffalo City"
+                  className="h-[100px]  object-contain"
+                />
 
-              <img
-                src="/images/nyda.jpg"
-                alt="NYDA"
-                className="h-full w-1/3 object-contain"
-              />
-              <img
-                src="/images/amathole.jpg"
-                alt="Amathole"
-                className="h-full w-1/3 object-contain"
-              />
-              <img
-                src="/images/ec.jpg"
-                alt="Eastern Cape"
-                className="h-full w-1/3 object-contain"
-              />
-              <img
-                src="/images/down.jpg"
-                alt="Down Touch Investments"
-                className="h-full w-1/3 object-contain"
-              />
-              <img
-                src="/images/kei.jpg"
-                alt="Great Kei"
-                className="h-full w-1/3 object-contain"
-              />
+                <img
+                  src="/images/nyda.jpg"
+                  alt="NYDA"
+                  className="h-[100px]  object-contain"
+                />
+                <img
+                  src="/images/amathole.jpg"
+                  alt="Amathole"
+                  className="h-[100px]  object-contain"
+                />
+                <img
+                  src="/images/ec.png"
+                  alt="Eastern Cape"
+                  className="h-[100px]  object-contain"
+                />
+                <img
+                  src="/images/down.jpg"
+                  alt="Down Touch Investments"
+                  className="h-[100px]  object-contain"
+                />
+                <img
+                  src="/images/kei.jpg"
+                  alt="Great Kei"
+                  className="h-[100px]  object-contain"
+                />
+                <img
+                  src="/images/wbho.png"
+                  alt="Great Kei"
+                  className="w-[170px]  object-contain"
+                />
+              </div>
             </div>
             <div>
               <Link href="/contact">
@@ -188,6 +203,280 @@ const Header = () => {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="mt-4">
+        <h2 className="py-4 text-center text-3xl font-bold text-orange-600">
+          Our Work
+        </h2>
+        <div className="flex justify-center 2xl:container 2xl:mx-auto">
+          <div className="w-full px-6 py-12 lg:w-4/5 2xl:px-20">
+            {/* Carousel for Small-Sized Screen */}
+            <CarouselProvider
+              className="relative block sm:hidden"
+              naturalSlideWidth={100}
+              isIntrinsicHeight={true}
+              totalSlides={3}
+              visibleSlides={1}
+              step={1}
+              infinite={true}
+              isPlaying={true}
+            >
+              <div className="js-flickity flex items-center justify-center">
+                <ButtonBack
+                  role="button"
+                  aria-label="slide backward"
+                  className="absolute left-0 z-30 ml-8 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-white hover:bg-gray-400 focus:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 md:h-14 md:w-14"
+                  id="prev"
+                >
+                  <svg
+                    width={8}
+                    height={14}
+                    viewBox="0 0 8 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7 1L1 7L7 13"
+                      stroke="black"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </ButtonBack>
+                <Slider>
+                  <Slide index={0}>
+                    <div className="gallery-cell mr-6 h-full w-full sm:w-96 lg:mr-7 lg:w-1/2">
+                      <div className="relative hidden h-full w-full lg:block">
+                        <img
+                          src="/images/terrace.jpg"
+                          alt="terrace"
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                      <div className="relative h-full w-full lg:hidden">
+                        <img
+                          src="/images/terrace.jpg"
+                          alt="terrace"
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                    </div>
+                  </Slide>
+                  <Slide index={1}>
+                    <div className="gallery-cell mr-6 h-full w-full sm:w-96 lg:mr-7 lg:w-1/2">
+                      <div className="relative hidden h-full w-full lg:block">
+                        <img
+                          src="/images/wall.jpg"
+                          alt="wall"
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                      <div className="relative h-full w-full lg:hidden">
+                        <img
+                          src="/images/wall.jpg"
+                          alt="wall"
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                    </div>
+                  </Slide>
+                  <Slide index={2}>
+                    <div className="gallery-cell mr-6 h-full w-full sm:w-96 lg:mr-7 lg:w-1/2">
+                      <div className="relative hidden h-full w-full lg:block">
+                        <img
+                          src="/images/kitchen.jpg"
+                          alt="kitchen"
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                      <div className="relative h-full w-full lg:hidden">
+                        <img
+                          src="/images/kitchen.jpg"
+                          alt="kitchen"
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                    </div>
+                  </Slide>
+                </Slider>
+                <ButtonNext
+                  role="button"
+                  aria-label="slide forward"
+                  className="absolute right-0 z-30 mr-8 flex h-12 w-12 items-center justify-center rounded-full border border-gray-300 bg-white hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 md:h-14 md:w-14"
+                  id="next"
+                >
+                  <svg
+                    width={8}
+                    height={14}
+                    viewBox="0 0 8 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L7 7L1 13"
+                      stroke="black"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </ButtonNext>
+              </div>
+            </CarouselProvider>
+
+            {/* Carousel for Medium and Large-Sized Screen */}
+            <CarouselProvider
+              className="relative hidden sm:block"
+              naturalSlideWidth={100}
+              isIntrinsicHeight={true}
+              totalSlides={3}
+              visibleSlides={1}
+              step={1}
+              infinite={true}
+              isPlaying={true}
+              currentSlide={1}
+            >
+              <div className="js-flickity flex items-center justify-center">
+                <ButtonBack
+                  role="button"
+                  aria-label="slide backward"
+                  className="absolute left-0 z-30 ml-8 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-white hover:bg-gray-400 focus:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 md:h-14 md:w-14"
+                  id="prev"
+                >
+                  <svg
+                    width={8}
+                    height={14}
+                    viewBox="0 0 8 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7 1L1 7L7 13"
+                      stroke="black"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </ButtonBack>
+                <Slider className="carousel__sliderLarge">
+                  <Slide className="carousel__inner-slideLarge" index={0}>
+                    <div className="gallery-cell h-full w-full">
+                      <div className="relative hidden h-full w-full lg:block">
+                        <img
+                          src="/images/terrace.jpg"
+                          alt="terrace"
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                      <div className="relative h-full w-full lg:hidden">
+                        <img
+                          src="/images/terrace.jpg"
+                          alt="terrace"
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                    </div>
+                  </Slide>
+                  <Slide className="carousel__inner-slideLarge" index={1}>
+                    <div className="gallery-cell h-full w-full">
+                      <div className="relative hidden h-full w-full lg:block">
+                        <img
+                          src="/images/wall.jpg"
+                          alt="wall"
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                      <div className="relative h-full w-full lg:hidden">
+                        <img
+                          src="/images/wall.jpg"
+                          alt="wall"
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                    </div>
+                  </Slide>
+                  <Slide className="carousel__inner-slideLarge" index={2}>
+                    <div className="gallery-cell h-full w-full">
+                      <div className="relative hidden h-full w-full lg:block">
+                        <img
+                          src="/images/kitchen.jpg"
+                          alt="kitchen"
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                      <div className="relative h-full w-full lg:hidden">
+                        <img
+                          src="/images/kitchen.jpg"
+                          alt="kitchen"
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+                    </div>
+                  </Slide>
+                </Slider>
+                <ButtonNext
+                  role="button"
+                  aria-label="slide forward"
+                  className="absolute right-0 z-30 mr-8 flex h-12 w-12 items-center justify-center rounded-full border border-gray-300 bg-white hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 md:h-14 md:w-14"
+                  id="next"
+                >
+                  <svg
+                    width={8}
+                    height={14}
+                    viewBox="0 0 8 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1L7 7L1 13"
+                      stroke="black"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </ButtonNext>
+              </div>
+            </CarouselProvider>
+          </div>
+
+          <style>
+            {`
+                    .gallery-cell {
+                        height: 386px;
+                        padding-right:15px;
+                    }
+                    @media (min-width: 300px) and (max-width: 420px) {
+                        .gallery-cell {
+                            height: 286px !important;
+                            
+                        }
+                    }
+                    
+                    @media (max-width: 640px) {
+                        .gallery-cell {
+                            padding-right:0;
+                        }
+                    }
+
+                    .carousel__sliderLarge {
+                        padding-left: 20%;
+                        padding-right: 20%;
+                    }
+
+                    /* gives us the illusion of spaces between the slides */
+                    .carousel__inner-slideLarge {
+                        width: calc(100% - 20px);
+                        height: calc(100% - 20px);
+                        left: 10px;
+                        top: 10px;
+                        
+                    }
+                `}
+          </style>
         </div>
       </section>
     </Fragment>

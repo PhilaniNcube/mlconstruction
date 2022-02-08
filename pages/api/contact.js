@@ -3,13 +3,17 @@ import sgMail from '@sendgrid/mail'
 sgMail.setApiKey(process.env.EMAIL_API_KEY)
 
 const sendEmail = async (req, res) => {
-  const { message } = req.body
+  const { message, email, telephone, fullName } = req.body
   const msg = {
     to: 'info@maslu.co.za',
-    from: 'info@maslu.co.za',
+    from: `${email}`,
     subject: 'Contact Form',
     text: `Hello you have received a contact form submission
-    Message: ${message}`,
+    From: ${fullName}
+    Email: ${email}
+    Tel: ${telephone}
+    Message: ${message}
+    `,
   }
 
   try {
