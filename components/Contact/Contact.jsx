@@ -19,6 +19,7 @@ const Contact = () => {
       console.log(response)
     } catch (error) {
       // toast error message. whatever you wish
+      console.log(error)
       alert('There was error sending the email. You can contact us via telephone on 073 236 4162')
     }
   }
