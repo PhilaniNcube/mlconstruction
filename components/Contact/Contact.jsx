@@ -6,7 +6,7 @@ const Contact = () => {
   const [email, setEmail] = useState('')
   const [telephone, setTelephone] = useState('')
 
-  const sendMail = async (message, fullName, email, telephone) => {
+  const sendMail = async (email, telephone, fullName, message) => {
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -98,7 +98,10 @@ const Contact = () => {
           <form
             id="contact"
             className="rounded-tr rounded-br bg-white py-4 px-8"
-            onSubmit={sendMail}
+            onSubmit={(e) => {
+            e.preventDefault()
+              sendMail(email, telephone, fullName, message)
+            }}
           >
             <h1 className="mb-6 text-4xl font-extrabold text-gray-800">
               Enter Details
