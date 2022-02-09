@@ -2,7 +2,7 @@ const sgMail = require('@sendgrid/mail')
 
 sgMail.setApiKey(process.env.EMAIL_API_KEY)
 
-const sendEmail = async (req, res) => {
+export default async function handler (req, res) {
   const { message, email, telephone, fullName } = req.body
   const msg = {
     to: 'info@maslu.co.za',
@@ -24,4 +24,4 @@ const sendEmail = async (req, res) => {
   }
 }
 
-export default sendEmail
+
