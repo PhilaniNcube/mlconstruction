@@ -1,4 +1,4 @@
-import sgMail from '@sendgrid/mail'
+const sgMail = require('@sendgrid/mail')
 
 sgMail.setApiKey(process.env.EMAIL_API_KEY)
 
@@ -6,7 +6,7 @@ const sendEmail = async (req, res) => {
   const { message, email, telephone, fullName } = req.body
   const msg = {
     to: 'info@maslu.co.za',
-    from: `${email}`,
+    from: `info@maslu.co.za`,
     subject: 'Contact Form',
     text: `Hello you have received a contact form submission
     From: ${fullName}
