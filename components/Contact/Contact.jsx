@@ -6,11 +6,11 @@ const Contact = () => {
   const [email, setEmail] = useState('')
   const [telephone, setTelephone] = useState('')
 
-  const sendMail = async (message) => {
+  const sendMail = async (message, fullName, email, telephone) => {
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'content-type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, fullName, telephone, message }),
       })
 
