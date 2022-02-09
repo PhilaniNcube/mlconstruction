@@ -16,12 +16,14 @@ export default async function handler (req, res) {
     `,
   }
 
-  try {
-    await sgMail.send(msg)
-    res.json({ message: `Email has been sent` })
-  } catch (error) {
-    res.status(500).json({ error: 'Error sending email' })
-  }
+  sgMail
+  .send(msg)
+  .then(() => {
+    console.log('Email sent')
+  })
+  .catch((error) => {
+    console.error(error)
+  })
 }
 
 
